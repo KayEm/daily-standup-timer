@@ -6,7 +6,7 @@ Each team member starts the timer, has 1 minute to answer the questions and fini
 - What will you do today?
 - Are there any impediments in your way?
 
-If the countdown from 1 minute reaches 0, a stopwatch will start to count the overtime.
+If the countdown from 1 minute reaches 0, a stopwatch will count the overtime.
 
 #Getting Started
 1.	Installation process
