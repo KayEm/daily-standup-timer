@@ -1,13 +1,15 @@
 #Introduction 
-Simple daily standup timer to keep the standup meeting timeboxed to 15 minutes.
+Simple daily standup timer to help team members in the standup meeting to stay focused and keep the meeting time-boxed to max. 15 minutes.
 
-Every participant at the standup meeting has up to 1 minute. The timer is started by touching the screen or clicking with the mouse.
-The countdown goes from 1 minute to 0 and the participant can stop the countdown when he/she is done.
-If the countdown is not stopped by the time the 1 minute is over, a stopwatch will start counting the overtime.
+Each team member starts the timer, has 1 minute to answer the questions and finishes by stopping the timer.
+- What did you do yesterday?
+- What will you do today?
+- Are there any impediments in your way?
+
+If the countdown from 1 minute reaches 0, a stopwatch will start to count the overtime.
 
 #Getting Started
 1.	Installation process
-This is a a desktop application built with WPF and MVVM.
 2.	Software dependencies
 3.	Latest releases
 4.	API references
