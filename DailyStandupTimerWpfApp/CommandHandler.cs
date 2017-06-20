@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace DailyStandupTimerWpfApp
+namespace DailyStandupTimer
 {
     public class CommandHandler : ICommand
     {

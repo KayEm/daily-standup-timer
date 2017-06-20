@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace DailyStandupTimerWpfApp
+namespace DailyStandupTimer
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

@@ -6,7 +6,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
 
-namespace DailyStandupTimerWpfApp
+namespace DailyStandupTimer
 {
     public class TimerViewModel : INotifyPropertyChanged
     {
