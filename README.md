@@ -1,20 +1,21 @@
 #Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+Simple daily standup timer to help team members in the standup meeting to stay focused and keep the meeting time-boxed to max. 15 minutes.
+
+Each team member starts the timer, has 1 minute to answer the questions and finishes by stopping the timer.
+- What did you do yesterday?
+- What will you do today?
+- Are there any impediments in your way?
+
+If the countdown from 1 minute reaches 0, a stopwatch will count the overtime.
 
 #Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
 1.	Installation process
 2.	Software dependencies
 3.	Latest releases
 4.	API references
 
 #Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+Open solution in Visual Studio, build project and run tests.
 
 #Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
-
-If you want to learn more about creating good readme files then refer the following [guidelines](https://www.visualstudio.com/en-us/docs/git/create-a-readme). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+Read LICENSE.
