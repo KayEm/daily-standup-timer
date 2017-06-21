@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Globalization;
+using System.Media;
 using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -91,6 +92,7 @@ namespace DailyStandupTimer
             }
             else
             {
+                SystemSounds.Beep.Play();
                 BackColor = new SolidColorBrush(Colors.Red);
 
                 Stop();
