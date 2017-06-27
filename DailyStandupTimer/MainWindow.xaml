@@ -43,8 +43,17 @@
 
     <Grid>
 
-        <Viewbox Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="100" />
+        </Grid.RowDefinitions>
+
+        <Viewbox Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="0">
             <Button Command="{Binding ActionCommand}" Content="{Binding CountdownText}"/>
+        </Viewbox>
+
+        <Viewbox Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="1">
+            <Button Content="{Binding TotalTime}" Grid.Row="1"/>
         </Viewbox>
 
     </Grid>

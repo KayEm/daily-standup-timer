@@ -12,11 +12,15 @@ namespace DailyStandupTimer
     public class TimerViewModel : INotifyPropertyChanged
     {
         private DispatcherTimer _timer;
+        private DispatcherTimer _totalTimer;
         private bool _canExecute;
         private ICommand _actionCommand;
-        private int _defaultTik = 60;
+        private int _defaultCountdownTik = 60;
+        private int _defaultTotalTik = 0;
         private int _tik;
+        private int _totalTik;
         private string _countdownText;
+        private string _totalText;
         private SolidColorBrush _backColor;
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -39,13 +43,27 @@ namespace DailyStandupTimer
         {
             get
             {
-                return String.IsNullOrEmpty(_countdownText) ? Convert(_defaultTik) : _countdownText;
+                return String.IsNullOrEmpty(_countdownText) ? Convert(_defaultCountdownTik) : _countdownText;
             }
             set
             {
                 _countdownText = value;
 
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CountdownText"));
+            }
+        }
+
+        public string TotalTime
+        {
+            get
+            {
+                return String.IsNullOrEmpty(_totalText) ? Convert(_defaultTotalTik) : _totalText;
+            }
+            set
+            {
+                _totalText = value;
+
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("TotalTime"));
             }
         }
 
@@ -108,12 +126,14 @@ namespace DailyStandupTimer
 
         private void StartTimer()
         {
-            _tik = _defaultTik;
+            _tik = _defaultCountdownTik;
 
             _timer = new DispatcherTimer();
             _timer.Tick += new EventHandler(Timer_Tick);
             _timer.Interval = new TimeSpan(0, 0, 1);
             _timer.Start();
+
+            StartTotalTimer();
 
             BackColor = new SolidColorBrush(Colors.Green);
         }
@@ -126,13 +146,39 @@ namespace DailyStandupTimer
             _timer.Tick += new EventHandler(StopWatch_Tick);
             _timer.Interval = new TimeSpan(0, 0, 1);
             _timer.Start();
+
+            StartTotalTimer();
         }
 
         private void Stop()
         {
             _timer.Stop();
-            // _timer.Tick -= new EventHandler(Timer_Tick);
             _timer = null;
+
+            StopTotalTimer();
+        }
+
+        protected void TotalTimer_Tick(object sender, EventArgs e)
+        {
+            TotalTime = Convert(_totalTik);
+            _totalTik++;
+        }
+
+        private void StartTotalTimer()
+        {
+            if (_totalTimer == null)
+            {
+                _totalTimer = new DispatcherTimer();
+                _totalTimer.Tick += new EventHandler(TotalTimer_Tick);
+                _totalTimer.Interval = new TimeSpan(0, 0, 1);
+            }
+
+            _totalTimer.Start();
+        }
+
+        private void StopTotalTimer()
+        {
+            _totalTimer.Stop();
         }
 
         private string Convert(int value)
